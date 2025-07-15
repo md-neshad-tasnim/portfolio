@@ -4,8 +4,11 @@ import React, { Suspense } from 'react'
 import HackerRoom from '../components/HackerRoom'
 import CanvasLoader from '../components/CanvasLoader'
 import { Center, OrbitControls, Bounds } from '@react-three/drei'
+import { Leva } from 'leva'
 
 const Hero = () => {
+
+
   return (
     <section className='min-h-screen w-full flex flex-col relative'>
       <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
@@ -13,6 +16,7 @@ const Hero = () => {
         <p className='hero_tag text-gray_gradient'>Building things for the web</p>
       </div>
       <div className="w-full h-full absolute inset-0">
+        <Leva />
         <Canvas camera={{ position: [0, 2, 20], fov: 35 }} className='w-full h-full'>
           <Suspense fallback={<CanvasLoader />}>
 
@@ -20,6 +24,7 @@ const Hero = () => {
             <Bounds fit clip observe margin={1.2}>
 
               <HackerRoom scale={0.07} position={[0, 0, 0]} rotation={[0, 280, 0]} />
+
               <ambientLight intensity={1} />
               <directionalLight position={[10, 10, 5]} intensity={1} />
             </Bounds>

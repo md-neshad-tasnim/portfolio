@@ -1,5 +1,6 @@
 
-import { useGLTF } from '@react-three/drei'
+import { useGLTF, useTexture } from '@react-three/drei'
+import { useEffect } from 'react'
 
 
 // this is the old way of loading the model, but it is not clean
@@ -102,14 +103,49 @@ import { useGLTF } from '@react-three/drei'
 
 
 
+// const HackerRoom = (props) => {
+//   const monitorTexture = useTexture('/textures/desk/monitor.png');
+//   const screenTexture = useTexture('/textures/desk/screen.png');
+
+//   const { scene } = useGLTF('/models/hacker-room.glb')
+//   //this is the correct way to load the model
+//   // use primitive to load the scene which is clean. use this method always
+//   return <primitive object={scene} {...props} />
+// }
+
+// useGLTF.preload('/models/hacker-room.glb')
+
+
+
+
+
 const HackerRoom = (props) => {
+  const monitorTexture = useTexture('/textures/desk/monitor.png')
+  const screenTexture = useTexture('/textures/desk/screen.png')
+
   const { scene } = useGLTF('/models/hacker-room.glb')
-  //this is the correct way to load the model
-  // use primitive to load the scene which is clean. use this method always
+
+  useEffect(() => {
+    scene.traverse((child) => {
+      if (child.isMesh) {
+        if (child.name.toLowerCase().includes('monitor')) {
+          child.material.map = monitorTexture
+          child.material.needsUpdate = true
+        }
+        if (child.name.toLowerCase().includes('screen')) {
+          child.material.map = screenTexture
+          child.material.needsUpdate = true
+        }
+      }
+    })
+  }, [scene, monitorTexture, screenTexture])
+
   return <primitive object={scene} {...props} />
 }
 
 useGLTF.preload('/models/hacker-room.glb')
+
+
 
 
 
