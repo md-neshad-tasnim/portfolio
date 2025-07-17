@@ -5,7 +5,9 @@ import React, { useRef } from 'react'
 const HeroCamera = ({ children, isMobile }) => {
   const groupRef = useRef();
   useFrame((state, delta) => {
-    easing.damp3(state.camera.position, [0, 0, 40], 0.25, delta);
+    // easing.damp3(state.camera.position, [0, 0, 15], 0.25, delta);
+    //[0, 0, 15] third value is the distance from the camera to the center of the scene
+    easing.damp3(state.camera.position, [0, 0, 20], 0.25, delta);
     if (!isMobile) {
       easing.dampE(groupRef.current.rotation, [-state.pointer.y / 3, -state.pointer.x / 5, 0], 0.25, delta);
     }
@@ -13,7 +15,7 @@ const HeroCamera = ({ children, isMobile }) => {
 
 
   return (
-    <group ref={groupRef}>{children}</group>
+    <group ref={groupRef} scale={isMobile ? 1 : 1.3}>{children}</group>
   )
 }
 
