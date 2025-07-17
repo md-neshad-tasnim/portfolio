@@ -31,7 +31,7 @@ const About = () => {
             <img src="/assets/grid2.png" alt="grid-2" className='w-full sm:w-[276px] h-fit object-contain' />
             <div>
               <p className="grid-headtext">Tect Stack</p>
-              <p className="grid-headtext">I specialize in JavaScriipt/TypeScript with a focus on React and Next.js ecosystem.</p>
+              <p className="grid-headtext">I specialize in JavaScript/TypeScript with a focus on React and Next.js ecosystem.</p>
             </div>
           </div>
         </div>
