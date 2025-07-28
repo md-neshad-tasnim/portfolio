@@ -79,7 +79,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className='field-input'
-                placeholder='Enter your name'
+                placeholder='Enter your email address'
               />
             </label>
             <label htmlFor="" className='space-y-3'>
