@@ -4,6 +4,8 @@ import { workExperiences } from '../constants'
 import { OrbitControls } from '@react-three/drei'
 import CanvasLoader from '../components/CanvasLoader'
 import Developer from '../components/Developer'
+import TechCube from '../components/TechCube'
+import TechCubeCanvas from '../components/TechCube'
 
 const Experience = () => {
   return (
@@ -11,8 +13,9 @@ const Experience = () => {
       <div className="w-full text-white-600">
         <h3 className="head-text">My Work Experience</h3>
 
+        {/* work experience this is to replace  */}
         <div className="work-container">
-          <div className="work-canvas">
+          {/* <div className="work-canvas">
             <Canvas>
               <ambientLight intensity={7} />
               <spotLight position={[10, 10, 10]} angle={0.15} penubra={1} />
@@ -22,6 +25,20 @@ const Experience = () => {
                 <Developer position-y={-3} scale={3} />
               </Suspense>
             </Canvas>
+          </div> */}
+
+          <div className="work-canvas">
+            <TechCubeCanvas />
+            {/* <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
+              <ambientLight intensity={2} />
+              <directionalLight position={[10, 10, 10]} intensity={1.5} />
+              <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={2} />
+              <Suspense fallback={<CanvasLoader />}>
+                <group position={[0, 0, 0]} scale={1.2}>
+                  <TechCube />
+                </group>
+              </Suspense>
+            </Canvas> */}
           </div>
 
 
