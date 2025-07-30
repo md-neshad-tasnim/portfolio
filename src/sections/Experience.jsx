@@ -3,7 +3,7 @@ import React, { Suspense } from 'react'
 import { workExperiences } from '../constants'
 import { OrbitControls } from '@react-three/drei'
 import CanvasLoader from '../components/CanvasLoader'
-import Developer from '../components/Developer'
+
 import TechCube from '../components/TechCube'
 import TechCubeCanvas from '../components/TechCube'
 
