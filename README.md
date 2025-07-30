@@ -31,11 +31,11 @@ Live Site 👉 [https://portfolio-two-sand-12.vercel.app/]
 | Drei | Helpers for react-three-fiber |
 | Vercel | Deployment platform |
 
-<!-- ---
+---
 
 ## 📸 Preview
 
-![Portfolio Preview](./preview.png) -->
+![Portfolio Preview](./preview.png)
 
 ---
 
